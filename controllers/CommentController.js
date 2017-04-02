@@ -1,43 +1,43 @@
-var Profile = require('../models/Profile');
+var Comment = require('../models/Comment');
 var Promise = require('bluebird');
 
 module.exports = {
 
   get: function(params, isRaw) {
       return new Promise(function(resolve, reject) {
-          Profile.find(params, function(err, profiles) {
+          Comment.find(params, function(err, comments) {
             if (err) {
               reject(err);
               return;
             }
 
-            resolve(profiles);
+            resolve(comments);
           });
       });
     },
 
   getById: function(id, isRaw) {
       return new Promise(function(resolve, reject) {
-        Profile.findById(id, function(err, profile) {
+        Comment.findById(id, function(err, comment) {
           if (err) {
             reject(err);
             return;
           }
 
-          resolve(profile);
+          resolve(comment);
         });
       });
     },
 
   post: function(params, isRaw) {
       return new Promise(function(resolve, reject) {
-        Profile.create(params, function(err, profile) {
+        Comment.create(params, function(err, comment) {
           if (err) {
             reject(err);
             return;
           }
 
-          resolve(profile);
+          resolve(comment);
         });
       });
     }
