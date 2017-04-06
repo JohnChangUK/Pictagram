@@ -25,7 +25,7 @@ router.get('/:resource', function(req, res, next) {
     .catch(function(err) {
       res.json({
         confirmation: 'fail',
-        message: err
+        message: "Invalid resource!"
       });
     });
 });
@@ -46,14 +46,14 @@ router.get('/:resource/:id', function(req, res, next) {
     controller.getById(req.params.id, false)
     .then(function(result) {
       res.json({
-        confirmation: 'Success!',
+        confirmation: 'Success, here is your Result!',
         result: result
       });
     })
     .catch(function(err) {
       res.json({
         confirmation: 'fail',
-        message: err // this is the error given back by the promise 'reject'
+        message: "Not found" // this is the error given back by the promise 'reject'
       });
     });   
 });
