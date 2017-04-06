@@ -5,28 +5,9 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>Create Profile</h1>
-
-    <form action="/api/profile" method="POST">
-      <input type="text" name="username" placeholder="Username" /><br />
-      <input type="text" name="password" placeholder="Password" /><br />
-      <input type="submit" value="Create" />
-    </form>
-  
-   <h1>Create Comment</h1>
+    <div id="root"></div>
     
-    <form action="/api/comment" method="POST">
-      <input type="text" name="post" placeholder="Post" /><br />
-      <input type="text" name="text" placeholder="Text" /><br />
-      <input type="submit" value="Create" />
-    </form>
-
-  <h1>Create Post</h1>
-    
-    <form action="/api/post" method="POST">
-      <input type="text" name="image" placeholder="Image" /><br />
-      <input type="text" name="caption" placeholder="Caption" /><br />
-      <input type="submit" value="Create" />
-    </form>
+  <script type="text/javascript" src="/build/bundle.js"></script>
+   
   </body>
 </html>
