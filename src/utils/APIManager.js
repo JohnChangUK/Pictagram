@@ -17,8 +17,6 @@ export default {
 
               resolve(response.body);
             });
-
         });
     }
-
 };

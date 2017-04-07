@@ -19,6 +19,6 @@ export default {
   },
 
   currentStore: () => {
-    return store
+    return store;
   }
 };
