@@ -12,7 +12,7 @@ export default {
         console.log("RESPONSE: " + JSON.stringify(response));
         dispatch ({
           type: constants.POSTS_RECEIVED,
-          posts: posts
+          posts: response.results
         });
       })
       .catch((err) => {

@@ -1,7 +1,7 @@
 import constants from '../constants';
 
 var initialState = {
-
+  list: []
 };
 
 export default (state = initialState, action) => {
@@ -9,7 +9,8 @@ export default (state = initialState, action) => {
 
   switch(action.type) {
     case constants.POST_RECEIVED:
-      console.log('POSTS_RECEIVED: ' + JSON.stringify(action.posts));
+      //console.log('POSTS_RECEIVED: ' + JSON.stringify(action.posts));
+      updated['list'] = action.posts;
       
     return updated;
 

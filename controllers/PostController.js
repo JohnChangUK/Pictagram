@@ -11,7 +11,16 @@ module.exports = {
               return;
             }
 
+          if (isRaw == true)
             resolve(posts);
+          else {
+              var list = []
+              posts.forEach(function(post, i) {
+                list.push(post.summary())
+              });
+
+              resolve(list);
+            }
           });
       });
     },
@@ -24,7 +33,10 @@ module.exports = {
             return;
           }
 
-          resolve(post);
+          if (isRaw == true)
+            resolve(post);
+          else
+          resolve(post.summary());
         });
       });
     },
@@ -37,7 +49,11 @@ module.exports = {
             return;
           }
 
-          resolve(post);
+          if (isRaw == true)
+            resolve(post);
+          else 
+            resolve(post.summary);
+
         });
       });
     }

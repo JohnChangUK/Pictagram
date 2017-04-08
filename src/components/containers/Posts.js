@@ -6,20 +6,22 @@ import actions from '../../actions';
 class Posts extends Component {
 
   componentDidMount() {
-    APIManager
-    .get('/api/post', null)
-    .then(response => {
-      console.log("RESPONSE: " + JSON.stringify(response));
-    })
-    .catch((err) => {
-      console.log("ERROR: " + err);
-    });
+    this.props.fetchPosts(null)
   }
 
   render() {
+
+    const list = this.props.posts.list.map( (post, i) => {
+      return (
+          <li key={post._id}>{post.caption}</li>
+        );
+    });
+
     return (
         <div>
-          Posts Container
+          <ol>
+            { list }
+          </ol>
         </div>
       );
   }
@@ -33,8 +35,8 @@ const stateToProps = (state) => {
 
 const dispatchToProps = (dispatch) => {
   return {
-    fetchPosts: (params) = dispatch(action.fetchPosts(params))
-  }
+    fetchPosts: (params) => dispatch(actions.fetchPosts(params))
+  } 
 }
 
 export default connect(stateToProps, dispatchToProps)(Posts);
