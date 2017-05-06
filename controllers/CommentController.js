@@ -16,7 +16,7 @@ module.exports = {
           else {
               var list = [];
               comments.forEach(function(comment, i) {
-                list.push(comment.summary())
+                list.push(comment.summary());
               });
 
               resolve(list);

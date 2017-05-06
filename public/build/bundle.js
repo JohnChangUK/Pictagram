@@ -10626,7 +10626,6 @@ var Posts = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-
       var list = this.props.posts.list.map(function (post, i) {
         return _react2.default.createElement(
           'li',

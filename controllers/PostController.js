@@ -14,9 +14,9 @@ module.exports = {
           if (isRaw == true)
             resolve(posts);
           else {
-              var list = []
+              var list = [];
               posts.forEach(function(post, i) {
-                list.push(post.summary())
+                list.push(post.summary());
               });
 
               resolve(list);

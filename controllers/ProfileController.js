@@ -1,4 +1,4 @@
-var Profile = require('../models/Profile');
+  var Profile = require('../models/Profile');
 var Promise = require('bluebird');
 
 module.exports = {
@@ -10,8 +10,17 @@ module.exports = {
               reject(err);
               return;
             }
+            
+            if (isRaw == true) 
+              resolve(profiles);
+            else {
+              var list = [];
+              profiles.forEach(function(profile, i) {
+                list.push(profile.summary());
+              });
 
-            resolve(profiles);
+              resolve(list);
+            }
           });
       });
     },
@@ -24,7 +33,10 @@ module.exports = {
             return;
           }
 
-          resolve(profile);
+          if (isRaw == true)
+            resolve(profile);
+          else
+            resolve(profile.summary());
         });
       });
     },
@@ -37,7 +49,10 @@ module.exports = {
             return;
           }
 
-          resolve(profile);
+          if (isRaw == true)
+            resolve(profile);
+          else
+            resolve(profile.summary());
         });
       });
     }

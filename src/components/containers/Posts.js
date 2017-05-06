@@ -6,12 +6,11 @@ import actions from '../../actions';
 class Posts extends Component {
 
   componentDidMount() {
-    this.props.fetchPosts(null)
+    this.props.fetchPosts(null);
   }
 
   render() {
-
-    const list = this.props.posts.list.map( (post, i) => {
+    const list = this.props.posts.list.map((post, i) => {
       return (
           <li key={post._id}>{post.caption}</li>
         );
